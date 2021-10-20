@@ -1,8 +1,10 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ExcelReadApi.Database.Models
 {
-    public class ExcelFormModel: EntityBase
+    [Table(nameof(ExcelForm))]
+    public class ExcelForm: EntityBase
     {
         [Required]
         [MaxLength(100)]

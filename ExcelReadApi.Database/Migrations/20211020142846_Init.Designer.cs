@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ExcelReadApi.Database.Migrations
 {
     [DbContext(typeof(ExcelDbContext))]
-    [Migration("20211020063049_Init")]
+    [Migration("20211020142846_Init")]
     partial class Init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -18,7 +18,7 @@ namespace ExcelReadApi.Database.Migrations
             modelBuilder
                 .HasAnnotation("ProductVersion", "5.0.11");
 
-            modelBuilder.Entity("ExcelReadApi.Database.Models.ExcelFormModel", b =>
+            modelBuilder.Entity("ExcelReadApi.Database.Models.ExcelForm", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -53,7 +53,7 @@ namespace ExcelReadApi.Database.Migrations
                     b.HasIndex("FirstName", "LastName", "Address")
                         .IsUnique();
 
-                    b.ToTable("Blogs");
+                    b.ToTable("ExcelForm");
                 });
 #pragma warning restore 612, 618
         }

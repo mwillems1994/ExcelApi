@@ -11,7 +11,7 @@ namespace ExcelReadApi.Database.Context
 {
     public class ExcelDbContext: DbContext
     {
-        public DbSet<ExcelFormModel> Blogs { get; set; } = null!;
+        public DbSet<ExcelForm> ExcelForm { get; set; } = null!;
         public string DbPath { get; private set; } = string.Empty;
 
         public ExcelDbContext(DbContextOptions<ExcelDbContext> options) : base(options)
@@ -53,7 +53,7 @@ namespace ExcelReadApi.Database.Context
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
-            builder.Entity<ExcelFormModel>()
+            builder.Entity<ExcelForm>()
                 .HasIndex(item => new { item.FirstName, item.LastName, item.Address })
                 .IsUnique();
         }

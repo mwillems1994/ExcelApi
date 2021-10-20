@@ -69,7 +69,7 @@ namespace ExcelReadApi.Services.Services
             var newExcelForms = excelForms
                 .Where(item => !existingForms
                     .Any(form => form.FirstName == item.FirstName && form.LastName == item.LastName && form.Address == item.Address))
-                .Select(item => new Database.Models.ExcelFormModel
+                .Select(item => new Database.Models.ExcelForm
                 {
                     FirstName = item.FirstName,
                     LastName = item.LastName,
@@ -138,7 +138,7 @@ namespace ExcelReadApi.Services.Services
             return results;
         }
 
-        private static ExcelFormModel AsExcelFormModel(Database.Models.ExcelFormModel model)
+        private static ExcelFormModel AsExcelFormModel(Database.Models.ExcelForm model)
             => new ExcelFormModel(model.FirstName, model.LastName, model.Address);
     }
 }

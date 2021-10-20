@@ -8,7 +8,7 @@ namespace ExcelReadApi.Database.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Blogs",
+                name: "ExcelForm",
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "TEXT", nullable: false),
@@ -21,12 +21,12 @@ namespace ExcelReadApi.Database.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Blogs", x => x.Id);
+                    table.PrimaryKey("PK_ExcelForm", x => x.Id);
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_Blogs_FirstName_LastName_Address",
-                table: "Blogs",
+                name: "IX_ExcelForm_FirstName_LastName_Address",
+                table: "ExcelForm",
                 columns: new[] { "FirstName", "LastName", "Address" },
                 unique: true);
         }
@@ -34,7 +34,7 @@ namespace ExcelReadApi.Database.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Blogs");
+                name: "ExcelForm");
         }
     }
 }

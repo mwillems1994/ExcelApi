@@ -5,13 +5,13 @@ using System.Linq;
 
 namespace ExcelReadApi.Services.Repositories
 {
-    public class ExcelFormRepository : BaseRepository<ExcelFormModel>
+    public class ExcelFormRepository : BaseRepository<ExcelForm>
     {
         public ExcelFormRepository(ExcelDbContext db) : base(db)
         {
         }
 
-        public IQueryable<ExcelFormModel> AllExcelForms => All
+        public IQueryable<ExcelForm> AllExcelForms => All
             .Where(item => !item.Deleted.HasValue); // Could solve with with a query filter and reflection...
     }
 }

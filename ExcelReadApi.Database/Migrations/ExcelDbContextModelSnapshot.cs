@@ -16,7 +16,7 @@ namespace ExcelReadApi.Database.Migrations
             modelBuilder
                 .HasAnnotation("ProductVersion", "5.0.11");
 
-            modelBuilder.Entity("ExcelReadApi.Database.Models.ExcelFormModel", b =>
+            modelBuilder.Entity("ExcelReadApi.Database.Models.ExcelForm", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -51,7 +51,7 @@ namespace ExcelReadApi.Database.Migrations
                     b.HasIndex("FirstName", "LastName", "Address")
                         .IsUnique();
 
-                    b.ToTable("Blogs");
+                    b.ToTable("ExcelForm");
                 });
 #pragma warning restore 612, 618
         }
