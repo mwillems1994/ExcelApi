@@ -68,13 +68,13 @@ namespace ExcelReadApi.Services.Services
             // Could do filtering in db...
             var newExcelForms = excelForms
                 .Where(item => !existingForms
-                    .Any(form => form.FirstName == item.FirstName && form.LastName == item.LastName && form.Address == item.Address))
+                    .Any(item.Equals))
                 .Select(item => new Database.Models.ExcelForm
                 {
                     FirstName = item.FirstName,
                     LastName = item.LastName,
                     Address = item.Address
-                }); // TODO: write fancy equals function and check case etc.
+                });
 
             await _excelFormRepository.AddRangeAsync(newExcelForms);
 
